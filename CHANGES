@@ -1,0 +1,14 @@
+
+Umacs
+=====
+
+
+VERSION 0.921 CHANGES
+
+2007-07-14:
+  Occurs in : demo(bioassay)
+  Message   : Error: dims [product 4] do not match the length of object [0]
+  Affects   : PMetropolis
+  Fixed     : .tpl.adapt.PMetropolis
+  By        : JK
+

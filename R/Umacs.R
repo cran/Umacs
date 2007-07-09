@@ -2991,6 +2991,10 @@ Sampler <- function (.timer=FALSE, ...)
 
 Sampler <- function (...)
 {
+  if ("package:rv" %in% search()) {
+    .rvc <- rvcompatibility(1)
+    on.exit(rvcompatibility(.rvc))
+  }
   p <- Parameters(...)
   obj <- .Sampler(p)
   run(obj)
@@ -5179,7 +5183,8 @@ if (debug) print(Sigma.emp)
     if (.about.zero(d)) {
        stop("DEBUG: Fatal error: Shape matrix has zero determinant.")
     }
-    Sigma.shape[[i]] <- Sigma.shape[[i]]*exp(-log(d)/nrow(Sigma.shape))
+    # FIXED 2007-07-14
+    Sigma.shape[[i]] <- Sigma.shape[[i]]*exp(-log(d)/nrow(Sigma.shape[[i]]))
     Sigma.jump[[i]] <<- (Sigma.scale[i]^2)*Sigma.shape[[i]]
     Sigma.jump.eigen[[i]] <<- .compute.eigen(Sigma.jump[[i]])
 ifdebug("  Sigma.scale=", Sigma.scale[i], "; Sigma.shape follows:\n")
