@@ -1,0 +1,37 @@
+%\VignetteIndexEntry{Umacs}
+\documentclass[11pt,letterpaper]{article}
+\pagestyle{myheadings}
+\markright{Getting Started With Umacs 0.912}
+\pagenumbering{arabic}
+
+%\setlength{\textheight}{20 cm}
+
+%\input{/Users/jkerman/lib/LaTeX/LaTeX-AMS-Commands}
+\newcommand{\email}[1]{{\tt #1 }}
+\newcommand{\code}[1]{\texttt{#1}}
+
+
+
+
+\newcommand{\Umacs}{{Umacs}}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+
+\title{Getting started with\\ Umacs: A Universal Markov Chain Sampler\\
+version 0.912}
+
+\author{
+ Jouni Kerman \\
+ \email{jouni@kerman.com}
+}
+ 
+\date{February 12, 2007}
+ 
+\begin{document}
+
+\maketitle
+
+\end{document}

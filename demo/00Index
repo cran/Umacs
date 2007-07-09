@@ -1,0 +1,5 @@
+EightSchools	8-Schools example from Bayesian Data Analysis (Gelman et al., 2nd ed)
+EightSchools-t	8-Schools example from Bayesian Data Analysis (Gelman et al., 2nd ed); t distribution
+EightSchools-mis-t	8-Schools example from Bayesian Data Analysis (Gelman et al., 2nd ed); t-distribution; imputation into a vector
+bioassay	Bioassay example from Bayesian Data Analysis (Gelman et al., 2nd ed); fitting the same model with various Metropolis schemes
+

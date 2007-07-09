@@ -1,0 +1,72 @@
+
+# NAMESPACE
+# package: Umacs
+# modified: 2005-12-30
+#
+# (c) 2005 Jouni Kerman <jouni@kerman.com>
+#
+
+import("stats")
+import("methods")
+
+export(
+  "Sampler",
+  "Gibbs",
+  "Metropolis",
+  "SMetropolis",
+  "PSMetropolis",
+  "PMetropolis",
+  "Trace",
+  "Data",
+  "RawCode",
+  "LocalObject",
+  "LocalFunction",
+  "mcts",
+  "print.mcts",
+  "summary.mcts",
+  "as.bugs.mcts",
+  "as.rv.mcts"
+)
+
+exportClasses(
+  "snippet",
+  "snippetlist",
+  "codetemplate",
+  "codetemplatelist",
+  "mcts",
+  "Sampler",
+  "SamplerCheck",
+  "SamplingScheme",
+  "Parameter",
+  "ParameterList",
+  "Gibbs",
+  "Metropolis",
+  "SMetropolis",
+  "PSMetropolis",
+  "PMetropolis",
+  "Trace",
+  "Data",
+  "RawCode",
+  "LocalObject",
+  "LocalFunction"
+)
+exportMethods(
+  "snippets",
+  "templates",
+  "show"
+)
+
+
+S3method(c,mcts)
+S3method(summary,mcts)
+S3method(print,mcts)
+##S3method(as.bugs,mcts)
+##S3method(as.rv,mcts)
+
+#exportMethods(
+#  "c",
+#  "summary", 
+#  "print", 
+#  "show"
+#)
+
