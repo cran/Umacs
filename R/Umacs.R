@@ -891,7 +891,7 @@ as.function.snippet <- function(x)
 # ================================================================================
 
 setMethod('run', signature(obj='snippet', name='missing', envir='list'), 
-function (obj, envir=NULL)
+function (obj, envir)
 {
   if (is.null(envir)) return(eval(code(obj)))
   f <- substitute(function () fun, list(fun=code(obj)))
@@ -1254,7 +1254,7 @@ function (obj)
 # ================================================================================
 
 setMethod('run', signature(obj='snippetlist', name='character', envir='list'), 
-function (obj, name, envir=NULL)
+function (obj, name, envir)
 {
   snip <- obj[[name]]
   run(snip, envir=envir)
@@ -1315,7 +1315,7 @@ function (obj)
 })
 
 setMethod('run', signature(obj='codetemplate', name='character', envir='list'), 
-function (obj, name, envir=NULL)
+function (obj, name, envir)
 {
   run(snippets(obj), name, envir)
 })
@@ -1352,7 +1352,7 @@ function (obj)
 })
 
 setMethod('run', signature(obj='codetemplatelist', name='character', envir='list'), 
-function (obj, name, envir=NULL)
+function (obj, name, envir)
 {
   run(snippets(obj), name, envir=envir)
 })
@@ -2403,7 +2403,7 @@ function (obj)
 
 .tpl.init.param.check.DFunction <- function ()
 {
-  whisper("Parameter ", QPARAM, ": (No initialization needed for a deterministic function.)\n")
+  PARAM <<- UPDATEFUN() 
 }
 
 # ========================================================================
@@ -2416,6 +2416,7 @@ function (obj)
   verbose <<- TRUE
   .error <<- FALSE
   whisper("Parameter ", QPARAM, ": trying updating routine... ")
+  
   .up <- try(tpl.update.param, silent=TRUE) # Updating
   if (.is.error(.up)) {
     whisper("failed!\n>>>")
@@ -5343,7 +5344,7 @@ mcts <- function (chains,
 # as.matrix.mcts  -  mcts chains as matrix
 # ========================================================================
 
-as.matrix.mcts <- function (x)
+as.matrix.mcts <- function (x, ...)
 {
   chains <- x@chains
   n.chains <- length(chains)
@@ -5603,6 +5604,11 @@ as.rv.mcts <- function(obj)
 # ========================================================================
 # as.bugs.mcts
 # ========================================================================
+
+as.bugs <- function (x)
+{
+  UseMethod("as.bugs")
+}
 
 as.bugs.mcts <- function (x)
 {

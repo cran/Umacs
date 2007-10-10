@@ -24,7 +24,9 @@ export(
   "mcts",
   "print.mcts",
   "summary.mcts",
+  "as.bugs",
   "as.bugs.mcts",
+  "as.matrix.mcts",
   "as.rv.mcts"
 )
 
@@ -47,6 +49,7 @@ exportClasses(
   "Trace",
   "Data",
   "RawCode",
+  "DFunction",
   "LocalObject",
   "LocalFunction"
 )
@@ -60,7 +63,8 @@ exportMethods(
 S3method(c,mcts)
 S3method(summary,mcts)
 S3method(print,mcts)
-##S3method(as.bugs,mcts)
+S3method(as.matrix,mcts)
+S3method(as.bugs,mcts)
 ##S3method(as.rv,mcts)
 
 #exportMethods(

@@ -1,12 +1,14 @@
 \name{as.bugs.mcts}
 \alias{as.bugs.mcts}
+\alias{as.bugs}
 \title{Coerce an `mcts' object to a `bugs' object}
 \description{Coerce an mcts object (esp. those made with Umacs samplers) to an rv object (those compatible with the package `rv')}
 \usage{
+\method{as.bugs}{mcts}(x)
 as.bugs.mcts(x)
 }
 \arguments{
-  \item{x}{ An mcts object to coerce}
+  \item{x}{An mcts object to coerce}
 }
 \details{
 Class `bugs' is a simulation-based random variable class.

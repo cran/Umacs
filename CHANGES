@@ -3,6 +3,39 @@ Umacs
 =====
 
 
+VERSION 0.924 CHANGES
+
+2007-09-29:
+  Message   : Error in .MakeSignature...
+  Affects   : package check
+  Fixed     : snippets.R (envir=NULL => envir)
+  By        : JK
+
+2007-08-25:
+  Message   : Error in as.vector(x, mode) : cannot coerce to vector
+  Affects   : Many samplers, "how many X do you know" example in Gelman-Hill.
+  Fixed     : NAMESPACE, as.matrix.mcts, as.bugs.mcts, as.bugs added
+  By        : JK
+
+2007-08-18:
+  Message   : (various errors)
+  Affects   : samplers with deterministic functions e.g. nu = function () 1/nu.inv
+  Fixed     : NAMESPACE, .tpl.init.param.check.DFunction
+  By        : JK
+
+
+VERSION 0.922 CHANGES
+
+2007-08-02:
+  Occurs in : 8-schools demos, others
+  Message   : Error in checkSlotAssignment(object, name, value) : 
+                      assignment of an object of class "list" is not valid for slot
+              "snippets" in an object of class "Data"; is(value, "snippetlist") is not TRUE
+  Affects   : possibly all samplers
+  Fixed     : 
+  By        : JK
+
+
 VERSION 0.921 CHANGES
 
 2007-07-14:

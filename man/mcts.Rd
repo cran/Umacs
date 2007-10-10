@@ -2,6 +2,7 @@
 \alias{mcts}
 \alias{print.mcts}
 \alias{summary.mcts}
+\alias{as.matrix.mcts}
 \title{mcts Objects}
 \description{
 A wrapper for new('mcts', ...)
@@ -10,6 +11,7 @@ A wrapper for new('mcts', ...)
 mcts(chains, n.burnin = 0, n.chains = numeric(0), n.iter = numeric(0), n.sims = n.iter, col.names = character(0), save.all = TRUE)
 \method{print}{mcts}(x, \dots)
 \method{summary}{mcts}(object, \dots)
+\method{as.matrix}{mcts}(x, \dots)
 }
 \arguments{
   \item{chains}{ }
